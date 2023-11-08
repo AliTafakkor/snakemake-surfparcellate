@@ -1,0 +1,30 @@
+func_dir: '/project/6050199/alit/EpLink/eplink-p3-resample2fsLR/32k_space_surfaces'
+output_dir: '/project/6050199/alit/EpLink/eplink-p3-parcellated'
+
+hemi:
+  - L
+  - R
+
+fwhm:
+  - 0
+  - 5
+  - 10
+
+conf:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+
+pybids_inputs:
+  func:
+    wildcards:
+      - subject
+      - hemi
+      - task
+      - run
+      - fwhm
+      - conf
+    custom_path:
+      "/project/6050199/alit/EpLink/eplink-p3-resample2fsLR/32k_space_surfaces/sub-{subject}/sub-{subject}_hemi-{hemi}_task-{task}_run-{run}_space-fsLR_den-32k_desc-denoised_fwhm-{fwhm}_confounds-{conf}_bold.func.gii"
