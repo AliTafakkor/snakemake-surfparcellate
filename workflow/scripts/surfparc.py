@@ -29,5 +29,5 @@ for roi in ROIs:
     parcellated_data[roi,:] = parcel_time_series
 
 # Save Parcelated data as HDF5 file
-with h5py.File(snakemake.output, 'w') as f:
+with h5py.File(snakemake.output.h5, 'w') as f:
     f.create_dataset('parcellated_data', data=parcellated_data)

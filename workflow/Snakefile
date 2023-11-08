@@ -18,7 +18,7 @@ rule parcellate:
         func_gii = config['func_dir']+"/sub-{subject}/sub-{subject}_hemi-{hemi}_task-{task}_run-{run}_space-fsLR_den-32k_desc-denoised_fwhm-{fwhm}_confounds-{conf}_bold.func.gii",
         label_gii = get_hemi_label
     output:
-        config['output_dir']+"/sub-{subject}/sub-{subject}_hemi-{hemi}_task-{task}_run-{run}_space-fsLR_den-32k_desc-denoised_fwhm-{fwhm}_confounds-{conf}_atlas-glasser.h5"
+        h5 = config['output_dir']+"/sub-{subject}/sub-{subject}_hemi-{hemi}_task-{task}_run-{run}_space-fsLR_den-32k_desc-denoised_fwhm-{fwhm}_confounds-{conf}_atlas-glasser.h5"
     script:
         "scripts/surfparc.py"
 
