@@ -4,7 +4,7 @@ import h5py
 
 # Load functional data and atals file
 func_gii = nib.load(snakemake.input.func_gii)
-label_gii = nib.load('../../resources/lh.hcp-mmp.32k_fs_LR.label.gii')
+label_gii = nib.load(snakemake.input.label_gii)
 
 # Extract the data arrays from the loaded GIfTI files
 func_data = np.vstack([darray.data for darray in func_gii.darrays]).T
